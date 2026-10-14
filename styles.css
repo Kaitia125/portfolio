@@ -1,0 +1,80 @@
+/* Alexandra Basbas portfolio styles.
+   Colors live in :root below: change them once and the whole page updates. */
+:root{
+  --bg:#FFFFFF; --panel:#F0F6EE; --sage:#9DB48F; --accent:#3E6A4E; --ink:#1E2B23; --muted:#56655B; --line:#DCE6D8; color-scheme:light;
+}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 "DM Sans",system-ui,sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:290px 1fr;gap:64px}
+aside{position:sticky;top:0;align-self:start;padding:64px 0 40px;height:fit-content}
+h1{font:600 clamp(2.3rem,5vw,3.2rem)/1.05 Fraunces,Georgia,serif;margin:0 0 14px;letter-spacing:-.01em}
+.role{margin:0 0 28px;color:var(--muted)}
+.contact{display:grid;gap:6px;font-size:.95rem;word-break:break-word}
+main{padding:56px 0 80px;min-width:0}
+
+/* tabs */
+.tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-bottom:36px}
+.tab{appearance:none;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;padding:10px 18px;font:600 1rem "DM Sans",system-ui,sans-serif;color:var(--muted);cursor:pointer}
+.tab:hover{color:var(--accent)}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+.panel[hidden]{display:none}
+
+section{margin-bottom:52px}
+h2{font:600 1.7rem/1.2 Fraunces,Georgia,serif;margin:0 0 20px}
+.intro{border-left:4px solid var(--sage);padding:4px 0 4px 24px;margin-bottom:52px;font-size:1.08rem}
+.intro p{margin:0;max-width:62ch}
+.item{margin-bottom:26px}
+.row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+h3{margin:0;font-size:1.08rem;font-weight:600}
+.date{color:var(--muted);font-size:.9rem}
+.sub{margin:2px 0 8px;color:var(--accent);font-weight:500}
+ul{margin:0;padding-left:1.2em}
+li{margin-bottom:4px;max-width:66ch}
+.tl .item{border-left:2px solid var(--sage);padding-left:20px;position:relative}
+.tl .item::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--sage)}
+.skills{display:grid;gap:16px}
+.skills>div{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start}
+.skills b{font-weight:600;padding-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:3px 13px;font-size:.92rem}
+.awards li{margin-bottom:8px}
+
+/* project cards */
+.lead{color:var(--muted);margin:0 0 24px;max-width:60ch}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:0;overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s}
+.card:hover{transform:translateY(-2px);border-color:var(--sage);box-shadow:0 8px 22px rgba(62,106,78,.12)}
+.card .pv{display:block;height:116px;background:linear-gradient(180deg,var(--panel),#fff);border-bottom:1px solid var(--line)}
+.card .pv svg{display:block;width:100%;height:100%}
+.card .body{display:block;padding:16px 18px 14px}
+.card .meta{display:flex;justify-content:space-between;gap:8px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.card .meta .cat{color:var(--accent)}
+.card .meta .yr{color:var(--muted)}
+.card .ttl{display:block;font:600 1.2rem/1.25 Fraunces,Georgia,serif;margin:8px 0 6px}
+.card .desc{display:block;color:var(--muted);font-size:.92rem;line-height:1.55}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tag{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:1px 10px;font-size:.78rem;color:var(--ink)}
+.card .more{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+dialog{border:0;border-radius:18px;padding:0;max-width:min(580px,calc(100vw - 32px));width:100%;color:var(--ink);background:var(--bg);box-shadow:0 24px 60px rgba(20,40,28,.28)}
+dialog::backdrop{background:rgba(24,40,30,.45)}
+.dlg-pv{height:170px;background:linear-gradient(180deg,var(--panel),#fff);border-bottom:1px solid var(--line)}
+.dlg-pv svg{display:block;width:100%;height:100%}
+.dlg-body{padding:22px 26px 26px}
+.dlg-body h3{font:600 1.5rem/1.2 Fraunces,Georgia,serif;margin:6px 0 2px}
+.dlg-body .cat{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+.dlg-body .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.dlg-close{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:1.1rem;line-height:1;cursor:pointer}
+.dlg-close:hover{border-color:var(--sage);color:var(--accent)}
+@media (max-width:640px){.cards{grid-template-columns:1fr}}
+
+@media (max-width:820px){
+  .wrap{grid-template-columns:1fr;gap:0}
+  aside{position:static;padding:40px 0 24px}
+  main{padding-top:8px}
+  .tabs{position:sticky;top:0;background:var(--bg);z-index:5;padding-top:8px}
+  .tab{flex:1;text-align:center}
+  .skills>div{grid-template-columns:1fr;gap:4px}
+}
